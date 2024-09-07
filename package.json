@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
     "build:development": "env-cmd -f .env.development vite build",
     "build:production": "env-cmd -f .env.production vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",
