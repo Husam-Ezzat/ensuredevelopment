@@ -1,0 +1,1 @@
+export const BASE_URL = process.env.ENSURE_APP_BASE_UR;

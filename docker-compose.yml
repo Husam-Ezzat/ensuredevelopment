@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  ensure-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - traefik_traefik
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.ensure-web.rule=Host(`ensure-web.dc1.shopsze.com`)'
+      - 'traefik.http.routers.ensure-web.entrypoints=websecure'
+      - 'traefik.http.routers.ensure-web.tls.certresolver=letsencryptresolver'
+      - 'traefik.http.services.ensure-web.loadbalancer.server.port=80'
+
+networks:
+  traefik_traefik:
+    external: true
