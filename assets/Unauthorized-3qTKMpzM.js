@@ -1,0 +1,1 @@
+import{j as e}from"./index-CtChZPOB.js";const t=()=>e.jsxs("div",{children:[e.jsx("h1",{children:"Unauthorized"}),e.jsx("p",{children:"You are not authorized to view this page."})]});export{t as default};
